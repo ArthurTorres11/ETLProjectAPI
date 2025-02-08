@@ -24,26 +24,28 @@ pip install -r requirements.txt
 
 Configuração
 Configure as variáveis de ambiente necessárias no arquivo .env:
-
+```sh
 POSTGRES_USER=seu_usuario
 POSTGRES_PASSWORD=sua_senha
 POSTGRES_HOST=localhost
 POSTGRES_PORT=5432
 POSTGRES_DB=seu_banco_de_dados
-
+```
 Uso
 Execute o script principal para iniciar o processo de ETL:
-
+```sh
 python main.py
-
+```
 Estrutura do Código
+```sh
 extrair_dados(): Função que faz a requisição à API do Coinbase e retorna os dados em formato de texto.
 transformar_dados(dados): Função que transforma os dados extraídos, convertendo-os para o formato necessário.
 load_dados_postgres(dados): Função que carrega os dados transformados no banco de dados PostgreSQL.
 criar_tabela(): Função que cria a tabela no banco de dados PostgreSQL, se ela não existir.
 Banco de Dados
+```
 O banco de dados utilizado é o PostgreSQL, hospedado no Render. A tabela bitcoin_preco é criada automaticamente pelo script, se não existir, e possui a seguinte estrutura:
-
+```sh
 CREATE TABLE bitcoin_preco (
     id SERIAL PRIMARY KEY,
     valor FLOAT NOT NULL,
@@ -51,6 +53,7 @@ CREATE TABLE bitcoin_preco (
     moeda VARCHAR(10) NOT NULL,
     timestamp TIMESTAMP WITHOUT TIME ZONE NOT NULL
 );
+```
 
 API do Coinbase
 A API do Coinbase é utilizada para obter os preços atuais das criptomoedas. A URL utilizada para a requisição é https://api.coinbase.com/v2/prices/spot. A resposta da API é um texto contendo informações sobre o preço da criptomoeda.
