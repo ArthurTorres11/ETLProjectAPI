@@ -1,6 +1,7 @@
 import requests
 from tinydb import TinyDB
 from datetime import datetime
+import time
 
 def extrair_dados():
     url = 'https://api.coinbase.com/v2/prices/spot'
@@ -30,6 +31,8 @@ def load_dados(dados, db_name="bitcoin.json"):
 
 
 if __name__ == "__main__":
-    dados_json = extrair_dados()
-    dados_tratados = transformar_dados(dados_json)
-    load_dados(dados_tratados)
+    while True:
+        dados_json = extrair_dados()
+        dados_tratados = transformar_dados(dados_json)
+        load_dados(dados_tratados)
+        time.sleep(15)

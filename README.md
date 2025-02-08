@@ -1,20 +1,16 @@
 # ETLProjectAPI
 
 ## Descrição
-Este projeto é uma aplicação de ETL (Extract, Transform, Load) que utiliza a biblioteca `requests` para extrair dados de uma API, transformá-los conforme necessário e carregá-los em um banco de dados.
+Este projeto é uma aplicação de ETL (Extract, Transform, Load) que utiliza a biblioteca `requests` para extrair dados de preços de criptomoedas da API do Coinbase, transformá-los e armazená-los em um banco de dados TinyDB.
 
 ## Estrutura do Projeto
-- `extract.py`: Contém funções para extrair dados da API.
-- `transform.py`: Contém funções para transformar os dados extraídos.
-- `load.py`: Contém funções para carregar os dados transformados no banco de dados.
-- `main.py`: Script principal que orquestra o processo de ETL.
+- `pipeline_01.py`: Script principal que realiza o processo de ETL.
 
 ## Requisitos
 - Python 3.8+
 - Bibliotecas Python:
   - requests
-  - pandas
-  - sqlalchemy
+  - tinydb
 
 ## Instalação
 Clone o repositório e instale os requisitos:
