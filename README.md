@@ -20,6 +20,7 @@ Clone o repositório e instale os requisitos:
 git clone https://github.com/seu-usuario/ETLProjectAPI.git
 cd ETLProjectAPI
 pip install -r requirements.txt
+```
 
 Configuração
 Configure as variáveis de ambiente necessárias no arquivo .env:
